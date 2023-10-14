@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>My Portfolio Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .big {
+      height: 100vh;
+      width: 100%;
+      background-image: url(Image/image_1.png);
+    
+      background-size: cover;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 45px;
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+
+    .logo {
+      color: white;
+      font-size: 40px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    span {
+      color: #f9004d;
+    }
+
+    nav ul li {
+      list-style-type: none;
+      display: inline-block;
+      padding: 10px 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    nav ul li a:hover {
+      color: #f9004d;
+      transition: 0.2s;
+    }
+
+    .butt {
+      text-decoration: none;
+      background-color: #f9004d;
+      color: white;
+      font-weight: bold;
+      border: 2px solid transparent;
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: transform 0.2s;
+    }
+
+    .butt:hover {
+      transform: scale(1.2);
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 8%;
+      transform: translateY(-50%);
+    }
+
+    h1 {
+      color: #f9004d;
+      margin: 20px 0px 20px;
+      font-size: 70px;
+    }
+
+    h3 {
+      color: #f9004d;
+      margin-bottom: 50px;
+      font-size: 30px;
+    }
+
+    h4 {
+      color: white;
+      letter-spacing: 2px;
+      font-size: 20px;
+    }
+
+    .contact {
+      width: 380px;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .contact form input:first-child {
+      display: inline-block;
+      width: 100%;
+      padding: 14px 120px 14px 16px;
+      border: 2px solid #f9004d;
+      outline: none;
+      border-radius: 30px;
+    }
+
+    .contact form input:last-child {
+      position: absolute;
+      display: inline-block;
+      outline: none;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background-color: #f9004d;
+      color: white;
+      box-shadow: 0px 0px 5px #f9004d;
+      top: 6px;
+      right: 6px;
+    }
+
+    .about {
+      width: 100%;
+      padding: 100px 0px;
+      background-color: #101010;
+    }
+
+    .about img {
+      height: auto;
+      width: 400px;
+    }
+
+    .text {
+      width: 500px;
+    }
+
+    .main {
+      width: 1100px;
+      max-width: 95%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .text h2 {
+      color: white;
+      font-size: 75px;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+    }
+
+    .text h5 {
+      color: white;
+      letter-spacing: 2px;
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-transform: capitalize;
+    }
+
+    .text p {
+      color: #fcfcfc;
+      letter-spacing: 1px;
+      line-height: 25px;
+      font-size: 17px;
+      margin-bottom: 45px;
+    }
+
+    button {
+      background-color: #f9004d;
+      color: white;
+      text-decoration: none;
+      border: 2px solid transparent;
+      font-weight: bold;
+      padding: 13px 25px;
+      border-radius: 30px;
+      transition: 0.4s;
+    }
+
+    button:hover {
+      background-color: transparent;
+      border: 2px solid #f9004d;
+      cursor: pointer;
+    }
+
+    .service {
+      background: #101010;
+      width: 100%;
+      padding: 100px 0px;
+    }
+
+    .title h2 {
+      color: white;
+      font-size: 75px;
+      width: 1100px;
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 400px;
+    }
+
+    .card {
+      height: 360px;
+      width: 330px;
+      padding: 20px 30px;
+      background: #191919;
+      border-radius: 20px;
+      margin: 20px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .card i {
+      font-size: 20px;
+      display: block;
+      text-align: center;
+      margin: 20px 0px;
+      color: #f9004d;
+    }
+
+    h5 {
+      color: white;
+      font-size: 21px;
+      padding-bottom: 15px;
+    }
+
+    .para p {
+      color: #fcfc;
+      font-size: 15px;
+      line-height: 26px;
+      margin-bottom: 25px;
+    }
+
+    .card .but {
+      background-color: #f9004d;
+      color: white;
+      text-decoration: none;
+      border: 2px solid transparent;
+      font-weight: bold;
+      padding: 6px 20px;
+      border-radius: 30px;
+      transition: 0.4s;
+    }
+
+    .card .but:hover {
+      background-color: transparent;
+      border: 2px solid #f9004d;
+      cursor: pointer;
+    }
+
+    .contact_01 {
+      width: 100%;
+      height: 290px;
+      background: #191919;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact_01 p {
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .contact_01 .butt_01 {
+      background-color: #f9004d;
+      color: white;
+      text-decoration: none;
+      border: 2px solid transparent;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: 0.4s;
+    }
+
+    .contact_01 .butt_01:hover {
+      background-color: transparent;
+      border: 2px solid #f9004d;
+      cursor: pointer;
+    }
+
+    footer {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background: #101010;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    footer p:nth-child(1) {
+      color: white;
+      font-size: 30px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    footer p:nth-child(2) {
+      color: white;
+      font-size: 17px;
+      width: 500px;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .social {
+      display: flex;
+    }
+
+    .social a {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9004d;
+      border-radius: 50%;
+      margin: 20px 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .social a:hover {
+      transform: scale(1.3);
+      transition: .3s;
+    }
+
+    .last {
+      position: absolute;
+      color: #f9004d;
+      bottom: 35px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="big">
+    <nav>
+      <h1 class="logo">Portfo<span>lio</span></h1>
+      <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about us">ABOUT US</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#skill">SKILLS</a></li>
+        <li><a href="#contact">CONTACT US</a></li>
+      </ul>
+      <a href="#" class="butt">Subscribe</a>
+    </nav>
+    <section id="home">
+      <div class="content">
+        <h4>Hello, my name is</h4>
+        <h1>Shahid&nbsp;<span style="color: rgb(255, 255, 255)"> Ullah</span></h1>
+        <h3>I'm a Web Developer.</h3>
+        <div class="contact">
+          <form>
+            <input type="email" name="email" id="mail" placeholder="Enter Your Email" />
+            <input type="submit" name="submit" value="Start" />
+          </form>
+        </div>
+      </div>
+  </div>
+  </section>
+  <!-- About Section-->
+  <section class="about" id="about us">
+    <div class="main">
+      <img src="Image/image_2.png" alt="Image"/>
+      <div class="text">
+        <h2>About Me</h2>
+        <h5>Web <span>Developer</span></h5>
+        <p>
+          In my role as a web developer, I possess a deep passion for crafting dynamic and user-centric digital
+          experiences. My skill set includes a strong grasp of HTML, CSS, JavaScript, and a variety of web development
+          frameworks. I have a proven history of transforming creative concepts into fully operational, responsive
+          websites. My portfolio proudly exhibits a diverse array of projects, ranging from e-commerce platforms to
+          personal blogs, all custom-tailored to fulfill the unique requirements and goals of my clients. I excel in
+          fine-tuning website performance, ensuring seamless and efficient operation across a wide spectrum of devices
+          and browsers.
+        </p>
+        <button type="button">Talk To Me</button>
+      </div>
+    </div>
+  </section>
+  <!--Services Section-->
+  <section id="services">
+    <div class="service">
+      <div class="title">
+        <h2>Our Services</h2>
+      </div>
+      <div class="box">
+        <div class="card">
+          <i class="fa-solid fa-bars"></i>
+          <h5>E-commerce Website Development</h5>
+          <div class="para">
+            <p>
+
+              I can develop robust and feature-rich e-commerce websites that allow you to sell products or services
+              online. This includes setting up shopping carts, payment gateways, and product catalogs.
+            </p>
+            <p style="text-align: center">
+              <a class="but" href="#">Read More</a>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <i class="fa-regular fa-user"></i>
+          <h5>Content Management Systems (CMS)</h5>
+          <div class="para">
+            <p>
+
+              I specialize in building websites using popular CMS platforms like WordPress, Joomla, or Drupal. These
+              platforms make it easy for you to update and manage your website's content without technical expertise.
+            </p>
+            <p style="text-align: center">
+              <a class="but" href="#">Read More</a>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <i class="fa-regular fa-bell"></i>
+          <h5>Search Engine Optimization (SEO)</h5>
+          <div class="para">
+            <p>
+
+              I can optimize your website for search engines to improve its visibility in search results. This includes
+              keyword research, on-page SEO, and performance optimization to attract organic traffic.
+            </p>
+            <p style="text-align: center">
+              <a class="but" href="#">Read More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Skill section-->
+  <section id="skill">
+    <div class="service">
+      <div class="title">
+        <h2>My Skills</h2>
+      </div>
+      <div class="box">
+        <div class="card">
+          <i class="fa-solid fa-bars"></i>
+          <h5>Server-Side Languages</h5>
+          <div class="para">
+            <p>
+              Node.js, Python, Ruby, PHP, Java<br>
+              RESTful API development<br>
+              Server-side validation<br>
+            </p>
+            <p style="text-align: center">
+              <a class="but" href="#">Read More</a>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <i class="fa-regular fa-user"></i>
+          <h5>API Integration</h5>
+          <div class="para">
+            <p>
+              Third-party API integration<br>
+              Authentication and data retrieval<br>
+              Troubleshooting and data consistency<br>
+            </p>
+            <p style="text-align: center">
+              <a class="but" href="#">Read More</a>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <i class="fa-regular fa-bell"></i>
+          <h5>Security</h5>
+          <div class="para">
+            <p>
+              Web security best practices<br>
+              Input validation and protection<br>
+              Regular software updates<br>
+            </p>
+            <p style="text-align: center">
+              <a class="but" href="#">Read More</a>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <i class="fa-regular fa-bell"></i>
+          <h5>Server Deployment</h5>
+          <div class="para">
+            <p>
+              Docker, AWS for deployment<br>
+              Server setup and configuration<br>
+              Web server management and hosting<br>
+            </p>
+            <p style="text-align: center">
+              <a class="but" href="#">Read More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Contact section-->
+  <section id="contact">
+    <div class="contact_01">
+      <p>Welcome To My Contact Page</p>
+      <a class="butt_01" href="#">Hire Me</a>
+    </div>
+    <footer>
+      <p>Shahid&nbsp;Ullah</p>
+      <p>For more Details Contact Me</p>
+      <div class="social">
+        <a href="https://wwww.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+      <p class="last">CopyRight By Shahid&nbsp;Ullah&copy;</p>
+    </footer>
+  </section>
+</body>
+
+</html>
